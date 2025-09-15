@@ -9,7 +9,7 @@ const options = {
         },
         servers: [
             {
-                url: 'http://localhost:3001/api',
+                url: "https://backend-sopa-production.up.railway.app/api",
                 description: 'Servidor de desarrollo'
             }
         ],
