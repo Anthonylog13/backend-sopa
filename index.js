@@ -9,7 +9,8 @@ const routerSearch = require("./Search/Router/apiRouter.js");
 app.use(cors({
     origin: [
         'http://localhost:3000',
-        'https://word-search-solver-ashen.vercel.app',
+        'https://frontend-62xuz1wri-anthonys-projects-22a4faf7.vercel.app',
+
     ],
     credentials: true
 }));
