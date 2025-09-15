@@ -6,7 +6,6 @@ const swaggerSpec = require('./Config/Swagger.js');
 const app = express();
 const routerSearch = require("./Search/Router/apiRouter.js");
 
-
 app.use(cors({
     origin: [
         'http://localhost:3000',
@@ -18,7 +17,6 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-
 app.get('/', (req, res) => {
     res.json({
         message: 'Word Search Solver API funcionando correctamente!',
@@ -28,18 +26,13 @@ app.get('/', (req, res) => {
     });
 });
 
-
 app.use('/api', routerSearch);
 app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerSpec));
 
-
 const PORT = process.env.PORT || 3001;
 
-if (process.env.NODE_ENV !== 'production') {
-    app.listen(PORT, () => {
-        console.log(`[INFO] SERVER RUNNING ON PORT ${PORT}`);
-    });
-}
-
+app.listen(PORT, () => {
+    console.log(`[INFO] SERVER RUNNING ON PORT ${PORT}`);
+});
 
 module.exports = app;
